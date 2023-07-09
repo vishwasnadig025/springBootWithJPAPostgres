@@ -48,7 +48,7 @@ public class ScanWebadminDBObjects {
                 }
             }
         } catch (Exception ex) {
-
+            System.out.println("The exception is=="+ex);
         }
 
     }
