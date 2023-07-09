@@ -15,7 +15,6 @@ public class ScanWebadminDBObjects {
     public static void main(String[] args) {
 
         try (Stream<Path> walk = Files.walk(Paths.get("E:\\JAR_SOURCES"))) {
-
             List<String> allXsds = walk.map(x -> x.toString())
                     .filter(f -> (f.endsWith(".java"))).collect(Collectors.toList());
             for (String filePath : allXsds) {
@@ -23,8 +22,7 @@ public class ScanWebadminDBObjects {
                         || filePath.contains("\\batch\\") || filePath.contains("\\service\\")
                         || filePath.contains("\\util\\") || filePath.contains("\\action\\")
                         || filePath.contains("\\billing\\")) {*/
-                if(true){
-
+                if (true) {
                     BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF8"));
                     String sCurrentLine;
                     boolean isFileNamePrinted = false;
@@ -48,8 +46,7 @@ public class ScanWebadminDBObjects {
                 }
             }
         } catch (Exception ex) {
-            System.out.println("The exception is=="+ex);
+            System.out.println("The exception is==" + ex);
         }
-
     }
 }
