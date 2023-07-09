@@ -1,12 +1,9 @@
 package com.vishwas.springBootWithJPAPostgres.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +12,14 @@ import java.util.Optional;
 public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
+
+    public StudentService(StudentRepository studentRepository) {
+    }
+
+    public StudentService() {
+
+    }
+
     public List<Student> getStudents(){
         return studentRepository.findAll();
     }

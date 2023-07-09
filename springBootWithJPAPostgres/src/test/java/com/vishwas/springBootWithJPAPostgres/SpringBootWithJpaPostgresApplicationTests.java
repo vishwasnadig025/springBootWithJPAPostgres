@@ -10,4 +10,9 @@ class SpringBootWithJpaPostgresApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void demoTestMethod (){
+		assert(true);
+	}
+
 }
